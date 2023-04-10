@@ -1,0 +1,500 @@
+@import'https://fonts.googleapis.com/css?family=Roboto+Mono&subset=cyrillic';
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+html{
+	font-size: 10px;
+	font-family: 'Montserrat', san-serif; 
+}
+a{
+	text-decoration: none;
+}
+.container{
+	min-height: 100vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+img{
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+p{
+	color: black;
+	font-size: 1.4rem;
+	margin-top: 5px;
+	line-height: 2.5rem;
+	font-weight: 300;
+	letter-spacing: .02rem;
+}
+
+/* This is for the navigation bar ma'am.  */
+
+#header {
+	position: fixed;
+	z-index: 1000;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: auto;
+}
+#header .header{
+	min-height: 8vh;
+	background-color: rgb(31,30,30,0.24);
+	transition: 0.3s ease background-color;
+}
+#header .nav-bar{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	height: 100%;
+	max-width: 1300px;
+	padding: 0 10px;
+}
+#header .nav-list ul{
+	list-style: none;
+	position: absolute;
+	background-color: rgb(31,30,30);
+	width: 100vw;
+	height: 100vh;
+	left: 100%;
+	top: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	z-index: -1;
+	overflow-x: hidden;
+	transition: 0.5s ease left;
+
+}
+#header .nav-list ul.active{
+	left: 0%;
+}
+#header .nav-list ul a{
+	font-size: 2.5rem;
+	font-weight: 500;
+	letter-spacing: .2rem;
+	text-decoration: none;
+	color: white;
+	text-transform: uppercase;
+	padding: 20px;
+	display: block;
+}
+
+#header .nav-list ul a::after{
+	content: attr(data-after);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(0);
+	color: rgba(240,248,255,0.021);
+	font-size: 13rem;
+	letter-spacing: 50px;
+	z-index: -1;
+	transition: .3s ease letter-spacing;
+}
+#header .nav-list ul li:hover a::after{
+	transform: translate(-50%, -50%) scale(1);
+	letter-spacing: initial;
+}
+#header .hamburger{
+	height: 60px;
+	width: 60px;
+	display: inline-block;
+	border: 3px solid white;
+	border-radius: 50%;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 100;
+    cursor: pointer;
+    margin-right: 20px;
+    transform: scale(.8);
+}
+#header .hamburger::after{
+	position: absolute;
+	content: '';
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+	border: 3px solid white;
+
+}
+
+#header .hamburger .bar{
+	height: 2px;
+	width: 30px;
+	position: relative;
+	background-color: white;
+	z-index: -1;
+}
+#header .hamburger .bar::after,
+#header .hamburger .bar::before{
+	content: '';
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	background-color: white;
+	transition: .3s ease;
+	transition-property: top, bottom;
+
+}
+#header .hamburger .bar::after{
+	top: 8px;
+}
+#header .hamburger .bar::before{
+	bottom: 8px;
+}
+#header .hamburger.active .bar::after{
+	top: 0px;
+}
+#header .hamburger.active .bar::before{
+	bottom: 0px;
+}
+#header .hamburger {
+		display: none;
+}
+#header .nav-list ul {
+		position: initial;
+		display: block;
+		height: auto;
+		width: fit-content;
+		background-color: transparent;
+}
+#header .nav-list ul li {
+		display: inline-block;
+}
+#header .nav-list ul li a {
+		font-size: 1rem;
+}
+#header .nav-list ul a:after {
+		display: none;
+}
+#header .header-img img{
+	height: 50px;
+	background-color: rgba(31,30,30,0.24);
+	align-items: right;
+}
+#header .brand{
+	font-size: 20px;
+    left: 20%;
+}
+
+
+/* This is for the home esction of my website ma'am. */
+
+
+#web{
+	background-color: rgb(255, 212, 212);
+	background-size: cover;
+	background-position: top center;
+	position: relative;
+	z-index: 1; 
+	font-size: 20px;
+	color: #222344;
+}
+#web::after{
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-color: gray;
+	opacity: 0.7;
+	z-index: -1;
+}
+
+
+
+
+
+/* This is for the advocacy part of my wesbite.*/
+
+
+#articlep1 .articlep1 {
+	flex-direction: column;
+	max-width: 1500px;
+	margin: 0 auto;
+	padding: 100px 0;
+	background-color: rgb(255, 255, 232);
+	width: 100%;
+}
+#articlep1 .all-articlep1 {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+#articlep1 .articlep1-item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	width: 80%;
+	margin: 20px auto;
+	overflow: hidden;
+	border-radius: 10px;
+}
+#articlep1 .articlep1-info {
+	padding: 30px;
+	flex-basis: 50%;
+	height: 100%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
+	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+	color: white;
+}
+#articlep1 .articlep1-info p {
+	color: white;
+	text-indent: 40px;
+}
+#articlep1 .articlep1-img {
+	flex-basis: 50%;
+	height: 300px;
+	overflow: hidden;
+	position: relative;
+}
+#articlep1 .articlep1-img:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+	opacity: 0.3;
+}
+#articlep1 .articlep1-img img {
+	transition: 0.3s ease transform;
+}
+#articlep1 .articlep1-item:hover .articlep1-img img {
+	transform: scale(1.1);
+}
+#articlep1 .section-title span {
+	color: rgb(134, 200, 188);
+	font-size: 5rem;
+}
+#articlep1 .section-title {
+	font-size: 5rem;
+}
+
+
+
+#articlep1 .articlep1-item{
+	flex-direction: row;
+}
+#articlep1 .articlep1-item:nth-child(even){
+	flex-direction: row-reverse;
+}
+#articlep1 .articlep1-item{
+	height: 900px;
+	margin: 0;
+	width: 80%;
+	border-radius: 0;
+}
+#articlep1 .all-articlep1 .articlep1-info{
+	height: 100%;
+}
+#articlep1 .all-articlep1 .articlep1-img{
+	height: 100%
+}
+
+
+/* This is the Get Involved Section. I made my images float and did a transition and transformation in my image. */
+
+#articlep2 .articlep2container {
+	padding: 75px;
+	font-family: 'Roboto';
+	font-size: 16px;
+	font-weight: 300;
+	line-height: 24px;
+	background-color: #FFD4D4;
+	margin-top: 50px;
+	margin-bottom: 50px;
+
+}
+#articlep2 .articlep2container p{
+	margin-bottom: 15px;
+
+}
+
+#articlep2 .side{
+	width: 450px;
+	position: relative;
+	box-shadow: 0 0 5px rgba(0,0,0,.4);
+	background-color: #fff;
+	overflow: hidden;
+	border-radius: 8px;
+	margin-bottom: 10px;
+}
+#articlep2 .side:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 8px solid #fff;
+    z-index: 2;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+#articlep2 .side img{
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+	transform: scale(1) rotate(0deg);
+	transition: all .5s linear;
+	margin-right: 0px;
+
+}
+
+#articlep2 .side:hover img{
+	transform: scale(1.1) rotate(-5deg);
+}
+
+@media screen and (max-width: 767px) {
+	#articlep2 .side .right{
+	float: right;
+	margin-left: 20px;
+
+    }
+    #articlep2 .side .left{
+	float: left;
+	margin-right: 20px;
+    }
+    
+    #articlep2 .side{
+    	width: 100%;
+    }
+   
+
+}
+
+
+
+/* About section  */
+#about .about{
+	flex-direction: row;
+	text-align: center;
+	max-width: 1500px;
+	margin: 0 auto;
+	padding: 10 20px;
+	background-color: #aacb73;
+}
+#about .col-left{
+	width: 250px;
+	height: 360px;
+}
+#about .col-right{
+	width: 100%;
+}
+#about .col-right h2{
+	font-size: 1.8rem;
+	font-weight: 500;
+	letter-spacing: .2rem;
+	margin-bottom: 10px;
+}
+#about .col-right p{
+	margin-bottom: 20px;
+}
+#about .col-left .about-img{
+	height: 100%;
+	width: 100%;
+	position: relative;
+	border: 10px solid white;
+}
+#about .col-left .about-img::after{
+	content: '';
+	position: absolute;
+	left: -33px;
+	top: 19px;
+	height: 98%;
+	border: 7px solid pink;
+	z-index: -1;
+}
+#about .section-title span {
+	color: #ffd4d4;
+	font-size: 5rem;
+}
+#about .section-title {
+	font-size: 5rem;
+}
+
+/* End of About section */
+
+/* Reference section */
+#reference .reference {
+		flex-direction: column;
+		padding: 100px 0;
+		align-items: center;
+		justify-content: center;
+		min-width: 20vh;
+		background-color: #ffd4b2;
+		line-height: 200%;
+		font-size: 1rem;
+}
+#reference .section-title span {
+	color: #rgb(255, 246, 189);
+	font-size: 2.5rem;
+}
+#reference .section-title {
+	font-size: 2.5rem;
+}
+/* End of Reference section */
+
+/* Footer section - I did sprites ma'am.*/
+
+#footer {
+	background-color: rgb(255, 246, 189);
+}
+#footer .footer {
+	min-height: 200px;
+	flex-direction: row;
+	padding-top: 50px;
+	padding-bottom: 10px;
+}
+#footer h2 {
+	color: white;
+	font-weight: 500;
+	font-size: 1.8rem;
+	letter-spacing: 0.1rem;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+#footer .social-icon {
+	display: flex;
+	margin-bottom: 30px;
+}
+#footer .social-item {
+	height: 50px;
+	width: 50px;
+	margin: 0 5px;
+}
+#footer .social-item img {
+	filter: grayscale(1);
+	transition: 0.3s ease filter;
+}
+#footer .social-item:hover img {
+	filter: grayscale(0);
+}
+#footer .social-icon h2{
+	color: black;
+}
+#footer .footer-container{
+	padding-right: 100px;
+	margin right: 60px; 
+	margin-left: 60px;
+}
+/* end of footer section */
